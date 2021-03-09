@@ -1,0 +1,2 @@
+<p> Este es un  mensaje que será descargado de forma <b>asíncrona</b>
+por el servidor, sin recargar la página </p>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        var lista = new Array();
+        $("#btnAgregar").click(function(){
+            var nombreInvitado = $("#txtInvitado").val();
+            lista.push(nombreInvitado);
+
+            var listaNumerada ="<ol>"
+            for(var k =0; k<lista.length; k++){
+                listaNumerada = listaNumerada + '<li>'+lista[k]+'</li>';
+            }
+            listaNumerada = listaNumerada + '</ol>';
+
+            $("#divListaInvitados").html(listaNumerada);
+        });
+
+    });
+    </script>
+</head>
+<body>
+    <h1>Lista de invitados a mi fiesta</h1>
+    <div>
+        <fieldset>
+        Nombre del invitado:
+        <input type="text" id="txtInvitado" name="txtInvitado">
+        <button id="btnAgregar">Agregar</button>
+    </fieldset>
+    </div>
+    <div id="divListaInvitados"></div>
+    
+</body>
+</html>

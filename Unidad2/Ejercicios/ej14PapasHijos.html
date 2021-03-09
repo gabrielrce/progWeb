@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#btnAgregar").click(function(){
+				//sze hacen calculos
+				//agregar al table
+				$("input").val("");
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Tienda 11-seven</h1>
+	<table>
+		<tr><td>Codigo</td><td><input type="text" name="txtCodigo" id="txtCodigo"></td></tr>
+		<tr><td>Descripcion</td><td><input type="text" name="txtDescripcion" id="txtDescripcion"></td></tr>
+		<tr><td>Precio</td><td><input type="number" name="txtPrecio" id="txtPrecio"></td></tr>
+		<tr><td>Cantidad</td><td><input type="number" name="txtCantidad" id="txtCantidad"></td></tr>	
+	</table>
+	<button id="btnAgregar">Agregar</button>
+
+<hr>
+<div>
+	<table id="tablaProductos">
+		<tr><th>Codigo</th><th>Descripcion</th><th>Precio</th></tr>
+		<tr><th>Codigo</th><th>Descripcion</th><th>Precio</th></tr>
+	</table>
+
+	Importe<span>$0.00</span>
+</div>
+	<h6>Quiero tu verga papi</h6>
+	
+</body>
+</html>

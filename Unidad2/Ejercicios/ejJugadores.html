@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Examen U2</title>
+<script type="text/javascript">
+ 
+
+function valida(f) {
+  var ok = true;
+  var msg = "Campos Requeridos:\n";
+  var clave1 = document.f1.psswd1.value;
+  var clave2 = document.f1.psswd2.value;
+  //var p1 = document.f1.Login.value;
+  //var espacios = false;
+  //var cont = 0;
+
+
+
+  if(f.elements[0].value == "")
+  {
+    msg += "- Nombre \n";
+    ok = false;
+    
+  }
+
+  if(f.elements["Login"].value == "")
+  {
+    msg += "- Login\n";
+    ok = false;
+  
+  }
+
+
+
+  if(f.psswd1.value == "")
+  {
+    msg += "- Contraseña\n";
+    ok = false;
+    
+  }
+
+
+
+  if(f.psswd2.value == "")
+  {
+    msg += "- Confirmar Contraseña\n";
+    ok = false;
+
+  }
+    
+  
+  if(ok == false){
+    alert(msg);
+    return ok;
+  }
+
+  if(document.getElementById("psswd1").value.length < 4){
+      alert('Contraseña minima de 4 caracteres requerida.');
+      
+    }
+
+  if (clave1 == clave2)
+       alert("Las dos claves son iguales.");
+    else
+       alert("Las dos claves son distintas.");
+
+  
+}
+</script>
+</head>
+
+<body>
+<form id="miForm" name="f1" action="" method="get" onsubmit="return valida(this)">
+
+Nombre: <input type="text" id="Nombre" />
+<br />
+Login: <input type="text" id="Login" />
+<br />
+Contraseña <input type="password" id="psswd1" placeholder="Minimo 4 caracteres" />
+Conformar Contraseña <input type="password" id="psswd2" placeholder="Minimo 4 caracteres" />
+
+<br />
+<input type="submit" value="Enviar"/>
+
+
+</form>
+</body>
+</html>

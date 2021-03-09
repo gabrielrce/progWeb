@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+     
+    function sumar(){
+        var n1;
+        var n2;
+        n1 = document.getElementById("txtNum1").value;
+        n2 = document.getElementById("txtNum2").value;
+        var suma = Number(n1) + Number(n2);
+       // var suma = parseInt(n1) + parseInt(n2);
+        document.getElementById("lblResultado").innerHTML=n1 + "+" + n2 + "=" + suma + "<br>";    }
+    
+    </script>
+</head> 
+<body>
+    <h1>Registro de usuario</h1>
+    <form method="POST">
+        Numero1: <input id="txtNum1" name="txtNum1" type="text"> <br>
+        Numero2: <input id="txtNum2" name="txtNum2" type="text"> <br>
+        <input id="btnEnviar" name="btnEnviar" value="Enviar" type="button" onclick="sumar();">
+        <input id="btnCancelar" name="btnCancelar" type="reset">
+
+    </form>
+    <br> <br>
+
+    <div id="lblResultado">0 + 0 = 0</div>
+</body>
+</html>

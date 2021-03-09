@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    
+    <title>Página web</title>
+</head>
+<body>
+    <h1> Mi primera página web </h1>
+  
+    <?php
+    for($a=1; $a<=6; $a++){
+        echo "<h$a> Me gusta programar </h$a>";
+    }
+    ?>
+    
+</body>
+</html>

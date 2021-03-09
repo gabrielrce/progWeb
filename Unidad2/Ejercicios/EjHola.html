@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <script>
+        var contador =0;
+        function hola(){
+            contador++;
+            //modificar contenido de la pag
+            var divDisplay = document.getElementById("display")
+            divDisplay.innerHTML = "contador = " + contador;
+           
+        }
+        //agregar un boton para restablecer
+        function clean(){
+            contador = 0;
+            var divDisplay = document.getElementById("display")
+            divDisplay.innerHTML = "contador = " + contador;
+        }
+
+        function prender(){
+            var foco = document.getElementById("foco")
+            foco.innerHTML = 
+
+        }
+
+        function apagar(){
+
+
+        }
+
+        //agregar un boton para restablecer
+    </script>
+
+
+</head>
+<body>
+   <div id="display">contador = 0</div>
+    <button onclick="hola()">Presioname</button>
+    <button onclick="clean()">Reiniciar</button>
+
+   <div id="foco">   </div>
+   <button onclick="prender()">Prender</button>
+   <button onclick="apagar()">Apagar</button>
+</body>
+</html>

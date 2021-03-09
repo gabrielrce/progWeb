@@ -1,0 +1,41 @@
+
+<!DOCTYPE html><html>
+<head>
+<title>Ejemplo</title>
+</head>
+<body>
+
+<script type="text/javascript" language="javascript">
+	
+function mostrar_imagen(id) {
+	var i=0;
+
+if (i==0) {
+	img = document.getElementById(id);
+   img.innerHTML = '<img src="off.png" width="100px" height="100px"><br>';
+   i=1;
+}
+
+if (i==1) {
+	img = document.getElementById(id);
+   img.innerHTML = '<img src="on.png" width="100px" height="100px"><br>';
+   i=0;
+} 
+
+	
+}
+</script>
+
+
+
+
+<input type="button" value="On/Off" onClick="javascript:mostrar_imagen('imagen')" />
+<br />
+<div id="imagen">
+</div>
+
+</body>
+</html> 
+
+
+	

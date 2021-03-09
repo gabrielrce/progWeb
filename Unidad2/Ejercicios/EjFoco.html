@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    
+</head>
+<style>
+    img {display: block;
+        margin-left: auto;
+        margin-right: auto;}
+    .centrar{
+        position: relative;
+    }
+</style>
+<script>
+    var encendido = false;
+function encender(){
+    
+   
+    var imgLed = document.getElementById("led");
+    encendido = !encendido;
+
+    if(encendido){
+        imgLed.src = "foco prendido.gif";
+    }else{
+        imgLed.src = "foco apagado.gif";
+    }
+}
+
+function ponerEstilo(estilo){
+    if(estilo==1){
+        document.getElementById("texto").style.fontSize="24px";   
+    }else{
+        document.getElementById("texto").style.fontSize="18px";   
+
+    }
+}
+function mostrar(estado){
+    if(estado){
+        document.getElementById("texto").style.visibility="visible";
+    }else{
+        document.getElementById("texto").style.visibility="hidden";
+
+    }
+}
+
+</script>
+
+<body>
+    <div class="centrar" >
+    <img id="led" src="foco apagado.gif"/>
+    <img src="interruptor.jpg" height="170px" onclick="encender();"/>
+ 
+</div>
+<div>
+<p id="texto">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro necessitatibus quos assumenda ea voluptate atque dignissimos hic cum autem impedit praesentium asperiores distinctio veritatis dolorem temporibus, unde inventore enim voluptatum!
+</p>
+<button onclick= "ponerEstilo(1);">estilo1</button>
+<button onclick= "ponerEstilo(2);">estilo2</button>
+<button onclick="mostrar(true);">Mostrar</button>
+<button onclick="mostrar(false);">Ocultar</button>
+</div>
+
+        
+</body>
+</html>

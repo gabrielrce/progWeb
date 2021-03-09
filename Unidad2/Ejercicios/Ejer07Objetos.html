@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    var estudiante = {
+        Matricula:" ",
+        Nombre:" ",
+        Semestre: 0
+        };
+
+    function mostrarObjeto(){
+
+
+    	var salida =" "; 
+        salida+= estudiante.Matricula + ", ";
+        salida+= estudiante.Nombre + ", ";
+        salida+= estudiante.Semestre + "<br />";
+        document.getElementById("divObjeto").innerHTML= salida;
+    }
+    function actualizarObjeto(){
+        estudiante.Matricula= document.getElementById("txtMatricula").value;
+        estudiante.Nombre= document.getElementById("txtNombre").value;
+        estudiante.Semestre= document.getElementById("txtSemestre").value;
+
+    }
+    function cargarObjeto(){
+
+        document.getElementById("txtMatricula").value=estudiante.Matricula;
+        document.getElementById("txtNombre").value=estudiante.Nombre;
+        document.getElementById("txtSemestre").value=estudiante.Semestre;
+
+    }
+</script>
+<body onload="cargarObjeto()">
+    Matricula: <input type="text" id="txtMatricula" name="txtMatricula"> <br>
+    Nombre: <input type="text" id="txtNombre" name="txtNombre"> <br>
+    Semestre: <input type="text" id="txtSemestre" name="txtSemestre"> <br>
+
+    <input type="button" value="Mostrar" onclick="mostrarObjeto()">
+    <input type="button" value="Actualizar" onclick="actualizarObjeto()">
+    <div id="divObjeto"></div>
+</body>
+</html>

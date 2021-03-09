@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+        var listaN = [1,2,3,4,5];
+        var listaStr = ["Dom","Lun", "Mar","Mie", "Jue", "Vie","Sab"];
+        function recorrerArreglos(){
+            var divLista = document.getElementById("divLista");
+        //Recorrido clásico
+        var salida = "";
+            for(var k=0; k<listaStr.length; k++){
+                salida = salida + listaStr[k] + "<br>";
+            }
+            //Reemplazar el divList
+            divLista.innerHTML = salida;
+            //Recorrido diferente
+        listaN.forEach(func_iterar);
+        divLista.innerHTML = divLista.innerHTML + salida2;
+    }
+
+        var salida2 ="";
+        function func_iterar(value, index, array){
+            salida2 =salida2 + value + "<br>";
+        } 
+
+
+
+        function agregar( ){
+            var divLista  = document.getElementById("divLista");
+            var elementoNuevo = document.getElementById("txtElemento").value;
+            //Agregarlo a listaStr
+            listaStr.push(elementoNuevo);
+            recorrerArreglos();
+        }
+    </script>
+</head>
+<body onload="recorrerArreglos();">
+    <div id="divAgregar">
+    <form>
+        Agregar elemento:
+        <input type="text" id="txtElemento" name="txtElemento">
+        <input type="button" value="Agregar" onclick="agregar();">
+    </form>
+
+    </div>
+    <div id="divLista">
+
+    </div>
+</body>
+</html>

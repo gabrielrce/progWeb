@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#btnFadeIn").click(function(){
+            $("#divUno").fadeIn(300);
+            $("#divDos").fadeIn(1200);
+            $("#divTres").fadeIn(2100);
+        });
+        $("#btnFadeOut").click(function(){
+            $("#divUno").fadeOut(2100);
+            $("#divDos").fadeOut(1200);
+            $("#divTres").fadeOut(300);
+            
+        });
+        $("#btnToggle").click(function(){
+            $("div").fadeToggle(2000);
+        });
+    });
+</script>
+<style>
+#divUno{
+    width: 60px;
+    height: 60px;
+    background-color: crimson;
+}
+#divDos{
+    width: 80px;
+    height: 80px;
+    background-color: greenyellow;
+}
+#divTres{
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+}
+</style>
+</head>
+<body>
+    <button id="btnFadeIn">Efecto FadeIn</button>
+    <button id="btnFadeOut">Efecto FadeOut</button>
+    <button id="btnToggle">Efecto toggle</button>
+
+    <div id="divUno">Div Unos</div>
+    <div id="divDos">Div Dos</div>
+    <div id="divTres">Div Tres</div>
+    
+    
+</body>
+</html>

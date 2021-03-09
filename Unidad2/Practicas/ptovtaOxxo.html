@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+
+        var total=0;
+    var producto = {codigo:" ", 
+        descripcion:" ",
+        Precio:0,
+        cantidad:1}
+
+        function agregarProducto(){
+            producto.codigo= document.getElementById("txtProducto").value;
+            producto.descripcion= document.getElementById("txtDescripcion").value;
+            producto.Precio= document.getElementById("txtPrecio").value;
+            producto.cantidad= document.getElementById("txtCantidad").value;
+
+            var TablaProductos="";
+            
+            TablaProductos += producto.codigo+" ";
+            TablaProductos += producto.cantidad+" ";
+            TablaProductos += producto.descripcion+" ";
+            TablaProductos += "$"+producto.Precio+" ";
+           
+           let cantidad = parseInt(document.getElementById("txtCantidad").value);
+           let precio = parseInt(document.getElementById("txtPrecio").value);
+
+            let Importe=precio*cantidad;
+            let lbl = document.createElement("li");
+            total+=Importe;
+            document.getElementById("divEncabezado").appendChild(lbl).append(TablaProductos, "$"+Importe);
+           
+         document.getElementById("divTotal").innerHTML="Total de compra: "+"$"+total;  
+         }      
+    </script>
+
+    <style type="text/css">
+   
+    #divEncabezado{
+        width: 650px;
+        
+        padding-top:80px; 
+        margin-left: 130px;
+        word-spacing: 85px;
+    }
+
+    #divTotal{
+        border-style: solid;
+        border-color: yellow;
+        width: 600px;
+        
+        text-align: center;
+        font-size: 20px;
+        
+    }
+    th{
+        padding-right:  30px;
+    }
+    li{
+        list-style: none;
+    }
+
+  
+    #txtProducto{
+        margin-left: 10px;
+    }
+     #txtDescripcion{
+        margin-left: 41px;
+    }
+    #txtPrecio{
+        margin-left: 78px;
+    }
+    
+    #txtCantidad{
+         margin-left: 61px;
+    }
+
+    </style>
+
+<body> 
+    <h1>Punto Venta No</h1><img src="Oxxo_Logo.svg" width="100" height="100"></a>
+    
+    <div id="general">
+            Codigo Producto:        <input type="text" id="txtProducto" name="txtProducto"> <br> <br>
+            Descripción:            <input type="text" id="txtDescripcion" name="txtDescripcion"/> <br> <br>
+            Precio:                 <input type="text" id="txtPrecio" name="txtPrecio"/> <br> <br>
+            Cantidad:               <input type="text" id="txtCantidad" name="txtCantidad"/> <br> <br>
+        
+    <input type="button" value="Agregar" onclick="agregarProducto();"/>
+    </div>
+    <div id="divEncabezado">
+        <table><th>Codigo </th><th>Cantidad</th><th>Descripción</th><th class="cabeza">Precio</th><th class="cabeza">Importe</th></table>
+    </div>
+    <div id="divTotal" ></div>
+</body>
+</html>

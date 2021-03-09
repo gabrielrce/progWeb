@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Examen U2</title>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var errorLogin = "Requerido";
+			var errorLogin1 = "No puede tener espacios";
+			$("#nombreErr").hide();
+			$("#loginErr").hide();
+			$("#passErr").hide();
+			$("#passErr1").hide();
+			var N = false, L = false, P = false, P1 = false;
+			$("span").addClass('hola');
+	$("#formulario").submit(function(){
+		
+		alert("Validando antes");
+		var Nombre = $("#txtNombre").val();
+		var Login = $("#txtLogin").val();
+		var password = $("#txtPass").val();
+		var password1 = $("#txtPass1").val();
+		if(Nombre == ""){
+			$("#nombreErr").show();
+			N = false;
+		}else{
+			$("#nombreErr").hide();
+			N = true;
+		}
+
+		if(Login == ""){
+			$("#loginErr").text(errorLogin);
+			$("#loginErr").show();
+			L = false;
+		}else{
+			if(Login.indexOf(" ") != -1){
+				$("#loginErr").html(errorLogin1);
+				$("#loginErr").show();
+				L = false;
+			}else{
+			$("#loginErr").hide();
+			 L = true;
+			}
+		}
+		if(password.length < 4){
+			$("#passErr").show();
+			P = false;
+		}else{
+			$("#passErr").hide();
+			P = true;
+		}
+
+		if(password != password1){
+			$("#passErr1").show();
+			P1 = false
+		}else{
+			$("#passErr1").hide();
+			P1 = true;
+		}
+
+		if(N && L && P && P1){
+			return true;
+		}else{
+			return false;
+		}
+		
+	});
+		});
+	</script>
+	<style type="text/css">
+		#divContForm{
+			border-style: solid;
+			border-color: black;
+			background-color:  rgb(230,230,250);
+			margin-right: 850px;
+		}
+		#txtNombre{
+			margin-left: 90px;
+		}
+		#txtLogin{
+			margin-left: 104px;
+		}
+		#txtPass{
+			margin-left: 71px;
+		}
+		span{
+			color: red;
+		}
+	</style>
+</head>
+<style type="text/css">
+	
+</style>
+<body>
+	<div id="divContForm">
+	<form id="formulario" action="loQueSea.php" method="POST">
+		<h2>Registro de Usuarios</h2>
+		Nombre: <input type="text" name="txtNombre" id="txtNombre"> <span id="nombreErr">Campo requerido</span> <br>
+		Login: <input type="text" name="txtLogin" id="txtLogin"> <span id="loginErr"></span> <br>
+		Contraseña: <input type="password" name="txtPass" id="txtPass" placeholder="Minimo 4 caracteres"> <span id="passErr">Mínimo 4 caracteres</span> <br>
+		Confirmar Contraseña:  <input type="password" name="txtPass1" placeholder="Minimo 4 caracteres" id="txtPass1"> <span id="passErr1">Las contraseñas no coinciden</span> <br> <br>
+		<input type="submit" value="Enviar">
+		
+		
+	</form>
+	</div>
+	
+</body>
+</html>

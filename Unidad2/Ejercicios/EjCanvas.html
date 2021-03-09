@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+<script>
+    function drawDiagonal() {
+    // Get the canvas element and its drawing context
+    var canvas =  document.getElementById('diagonal');
+    //var canvas =  $("#diagonal").html();
+    var context = canvas.getContext('2d');
+    // Create a path in absolute coordinates
+    context.beginPath();
+    context.moveTo(70, 140);
+    context.lineTo(140, 70);
+    context.lineTo(210, 140);
+    context.lineTo(70, 140);
+    // Stroke the line onto the canvas
+    context.stroke();
+    var contexto2 = canvas.getContext('2d');
+    contexto2.translate(200,150);
+    contexto2.strokeStyle ="#00BB20";
+    contexto2.lineWidth=6;
+    contexto2.beginPath();
+    contexto2.moveTo(70, 140);
+    contexto2.lineTo(140, 70);
+    contexto2.lineTo(210, 140);
+    contexto2.closePath();
+    contexto2.lineJoin="round";
+    contexto2.fillStyle ="#50BB20";
+    contexto2.fill();
+    contexto2.stroke();
+
+    }
+    //window.addEventListener("load", drawDiagonal, true);
+    $(document).ready(function(){
+        drawDiagonal();
+    });
+   </script>
+   </head>
+<body>
+    <canvas id="diagonal" style="border: 1px solid;" height="700" width="800"></canvas> 
+</body>
+</html>

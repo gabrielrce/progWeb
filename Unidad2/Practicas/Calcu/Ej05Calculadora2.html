@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <script>
+    var primerDigito = true;
+var acumulador = 0.0; //Aqui ponemos los resultados
+var operador = "="; //Operador inicial
+var memoria = 0;
+
+function btnClic(numero){
+    var pantalla;            
+    pantalla = document.getElementById("display");
+
+    if("0123456789.".indexOf(numero) >= 0){
+        //es un digito
+        if(primerDigito){
+        pantalla.innerHTML = numero;
+        primerDigito=false;
+        }else{
+        pantalla.innerHTML = pantalla.innerHTML + numero
+        }
+    }else{
+          //es un operador
+        if(!primerDigito){
+            calcular(pantalla);
+           primerDigito=true;
+        }        
+        operador=numero; // + - x / =
+    }//fin de funcion btn_click()
+}
+function calcular(pantalla){
+    var valor = Number(pantalla.innerHTML);
+    switch(operador){
+        case "=" : acumulador = valor;
+        break;
+
+        case "+" : acumulador=acumulador + valor;
+        break;
+
+        case "-" : acumulador= acumulador - valor;
+        break;
+
+        case "*" : acumulador= acumulador* valor;
+        break;
+        
+        case "/" : acumulador= acumulador / valor;
+        break;                
+    }
+    pantalla.innerHTML = acumulador;
+}
+function especiales(variable){
+    var pantalla = document.getElementById("display");
+    var pantalla2 = Number(pantalla.innerHTML);
+    
+    switch(variable){
+        case 'CE': 
+            pantalla.innerHTML = '0';
+            primerDigito=true;   
+            break;
+        case 'C':
+            acumulador = 0;
+            pantalla.innerHTML = acumulador;
+            break;
+        case 'MR':
+            pantalla.innerHTML = memoria;
+            acumulador = memoria;
+            break;
+        case 'M+':
+            memoria = memoria + pantalla2;
+            pantalla.innerHTML = '0';
+            primerDigito = true;
+            break;
+        case 'M-':
+            memoria = memoria - pantalla2;
+            pantalla.innerHTML = '0';
+            primerDigito = true;
+            break;
+        case 'MC':
+            memoria = 0;
+            pantalla.innerHTML = '0';
+            break;
+    }
+}
+    </script>
+<style>
+#calculadora{
+   border-style: groove;
+   margin-left:600px; 
+   padding-bottom: 10px;
+    width: 200px;
+    height: 280px;
+      }
+#display{
+    text-align: right;
+    font-size: 30px;
+    margin: 5px;  
+    background-color: gray;
+}
+button{
+    font-size: 18px; 
+    font-weight:lighter;
+    width: 35px;
+    margin: 6px;
+    color: white;
+    background-color: black;
+}
+button:hover {
+  background-color: white;
+  color: black;
+}
+.buttonEspeciales{
+    font-size: 18px; 
+    font-weight:lighter;
+    width: 35px;
+    margin: 6px;
+    padding: 3px;
+     color: white;
+    background-color: black;
+}
+    </style>
+</head>
+<body>
+    <div id="calculadora">
+        <div id="display">0</div> 
+            <div class="renglon">
+                    <button class="buttonEspeciales" id="btnM+" onclick="especiales('M+')">M+</button>
+                    <button class="buttonEspeciales" id="btnM-" onclick="especiales('M-')">M-</button>
+                   <button class="buttonEspeciales" id="btnMR" onclick="especiales('MR')">MR</button>
+                <button class="buttonEspeciales" id="btnMC" onclick="especiales('MC')">MC</button>
+            </div>
+            <div class="renglon">
+                 <button class="buttonEspeciales" id="btnCE" onclick="especiales('CE')">CE</button>
+                    <button class="buttonEspeciales" id="btnC" onclick="especiales('C')">C</button>
+                <button id="btn=" onclick="btnClic('=')">=</button>
+                    <button id="btn+" onclick="btnClic('+')">+</button>
+               
+            </div>        
+            <div class="renglon">
+                    <button id="btn7" onclick="btnClic('7')">7</button>
+                    <button id="btn8" onclick="btnClic('8')">8</button>
+                    <button id="btn9" onclick="btnClic('9')">9</button>
+                    <button id="btn/" onclick="btnClic('/')">/</button>
+            </div>        
+            <div class="renglon">
+                    <button id="btn4" onclick="btnClic('4')">4</button>
+                    <button id="btn5" onclick="btnClic('5')">5</button>
+                    <button id="btn6" onclick="btnClic('6')">6</button>
+                    <button id="btn*" onclick="btnClic('*')">*</button>
+                </div>        
+            <div class="renglon">
+                    <button id="btn1" onclick="btnClic('1')">1</button>
+                    <button id="btn2" onclick="btnClic('2')">2</button>
+                    <button id="btn3" onclick="btnClic('3')">3</button>
+                    <button id="btn-" onclick="btnClic('-')">-</button>
+                </div>       
+            <div class="renglon">
+                    <button id="btn0" onclick="btnClic('0')">0</button>
+                    <button id="btn." onclick="btnClic('.')">.</button>
+                    
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        var total=0;
+    var producto = {codigo:" ", 
+        descripcion:" ",
+        Precio:0,
+        cantidad:1}
+
+        function agregarProducto(){
+            producto.codigo= document.getElementById("txtProducto").value;
+            producto.descripcion= document.getElementById("txtDescripcion").value;
+            producto.Precio= document.getElementById("txtPrecio").value;
+            producto.cantidad= document.getElementById("txtCantidad").value;
+
+            var TablaProductos="";
+            
+            TablaProductos += producto.codigo+" ";
+            TablaProductos += producto.cantidad+" ";
+            TablaProductos += producto.descripcion+" ";
+            TablaProductos += "$"+producto.Precio+" ";
+           
+           let cantidad = parseInt(document.getElementById("txtCantidad").value);
+           let precio = parseInt(document.getElementById("txtPrecio").value);
+
+            let Importe=precio*cantidad;
+            let lbl = document.createElement("li");
+            total+=Importe;
+            document.getElementById("divEncabezado").appendChild(lbl).append(TablaProductos, "$"+Importe);
+           
+         document.getElementById("divTotal").innerHTML="Total de compra: "+"$"+total;  
+         }      
+    </script>
+    <style>
+    body{
+        font-family: orbitron;
+        margin: auto;
+        background-image: url("img/duno.png");  
+        background-repeat: no-repeat;   
+    }
+    
+    #Formato{
+        background-image: url("img/oxxo.png");
+        background-size: 210px;
+        background-repeat: no-repeat;
+        background-position: right;
+        margin-left: 130px;
+        margin-top: 30px;
+        width: 615px;
+      
+        padding: 30px 0px 30px 35px;
+    }
+
+    #divEncabezado{
+        width: 650px;
+        
+        padding-top:80px; 
+        margin-left: 130px;
+        word-spacing: 85px;
+    }
+
+    #divTotal{
+        width: 650px;
+        padding-top:30px; 
+        margin-left: 100px;
+    }
+    th{
+        padding-right:  60px;
+    }
+    li{
+        list-style: none;
+    }
+    </style>
+</head>
+<body> 
+    
+    <div id="Formato">
+            Codigo Producto: <input type="text" style="font-family:orbitron;" id="txtProducto" name="txtProducto"> <br> <br>
+            Descripción:  <input type="text" style="font-family:orbitron;" id="txtDescripcion" name="txtDescripcion"/> <br> <br>
+            Precio: <input type="text" style="font-family:orbitron;" id="txtPrecio" name="txtPrecio"/> <br> <br>
+            Cantidad:  <input type="text" style="font-family:orbitron;" id="txtCantidad" name="txtCantidad"/> <br> <br>
+        
+    <input type="button" style="font-family:orbitron; font-weight: 80px;" value="AGREGAR" onclick="agregarProducto();"/>
+    </div>
+    <div id="divEncabezado">
+        <table><th>Codigo </th><th>Cantidad</th><th>Descripción</th><th class="cabeza">Precio</th><th class="cabeza">Importe</th></table>
+    </div>
+    <div id="divTotal" style="font-family: aero; text-align: right; font-size: 30px;"></div>
+</body>
+</html>

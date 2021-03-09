@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+.seleccionado{
+    border-color: lightblue;
+}
+</style>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("btnAgregar").click(function(){
+
+        //limpiar
+        $("input").val("");
+
+        //actualizar el total 
+    });
+});
+</script>
+<body>
+    <h1>Tienda NOXXO</h1>
+    <table>
+        <tr><td>Codigo</td> <td><input type="text" id="txtCodigo" name="txtCodigo"> </td>  </tr>
+        <tr><td>Descripcion</td> <td><input type="text" id="txtDescripcion" name="txtDescripcion"> </td>  </tr>
+        <tr><td>Precio</td> <td><input type="number" id="txtPrecio" name="txtPrecio"> </td>  </tr>
+        <tr><td>Cantidad</td> <td><input type="number" id="txtCantidad" name="txtCantidad"> </td>  </tr>
+        
+      <hr>
+    </table>
+    <button id="agregar"> Agregar</button>
+    <div>
+    <table id="tablaProductos">
+        <tr><td>Codigo</td>  <td>Descripcion</td> <td>Precio</td> <td>Cantidad</td> <td>Importe</td>
+        </tr>
+    </table>
+</div>
+    <h6>Quiero todo tu dinero</h6>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NOXXO</title>
+        <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        var acumulador = 0;        
+            $(document).ready(function(){
+                $("#Agregar").click(function(){
+                     var Codigo= $("#txtCodigo").val()
+                var Descripcion = $("#txtDescripcion").val()
+                var Precio = $("#txtPrecio").val()
+                var Cantidad = $("#txtCantidad").val()
+                var Importe = Cantidad * Precio;
+                acumulador = acumulador + Importe;
+                var renglon = "<tr>"+
+                          "<td>" + Codigo + "</td>"+ 
+                          "<td>" + Descripcion + "</td>"+
+                          "<td>" + Precio + "</td>"+
+                          "<td>" + Cantidad + "</td>"+  
+                          "<td>" + Importe + "</td>"+ 
+                          "</tr>";
+                $("#Productos").append(renglon) 
+                $("#Total").text("Total = $" + acumulador)
+                $("#txtCodigo").val("") 
+                $("#txtDescripcion").val("") 
+                $("#txtPrecio").val("")
+                $("#txtCantidad").val("")  
+                })
+                  
+               
+        })
+    </script>
+    <style>
+   
+
+
+#Total{
+     border-style: solid;
+        border-color: yellow;
+        width: 600px;
+        
+        text-align: center;
+        font-size: 20px;
+}
+
+
+ th{
+        padding-right:  30px;
+    }
+    li{
+        list-style: none;
+    }
+
+    #divEncabezado{
+        width: 650px;
+        
+        padding-top:80px; 
+        margin-left: 130px;
+        word-spacing: 85px;
+    } 
+    #txtCodigo{
+        margin-left: 61px;
+    }
+     #txtDescripcion{
+        margin-left: 61px;
+    }
+    #txtPrecio{
+        margin-left: 61px;
+    }
+    
+    #txtCantidad{
+         margin-left: 61px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Punto Venta No</h1><img src="Oxxo_Logo.svg" width="100" height="100"></a>
+    <h1>Jquery</h1>
+        <div id="Cuerpo">
+        
+        <table id="Campos">
+            <tr> <td>Codigo</td> <td> <input type="text" id="txtCodigo" name="txtCodigo"></td></tr>
+            <tr> <td>Descripcion</td> <td> <input type="text" id="txtDescripcion" name="txtDescripcion"></td></tr>
+            <tr> <td>Precio</td> <td> <input type="number" id="txtPrecio" name="txtPrecio"></td></tr>
+            <tr> <td>Cantidad</td> <td> <input type="number" id="txtCantidad" name="txtCantidad"></td></tr>        
+            </table>                               
+        
+        <button id="Agregar">Agregar</button>
+        <hr>
+    </div>
+        <table id="Productos">
+            <tr> <th>Codigo</th> <th>Descripcion</th> <th>Precio</th> <th>Cantidad</th> <th>Importe</th></tr>
+        </table>
+        <div id="Total"></div>
+    
+</body>
+</html>

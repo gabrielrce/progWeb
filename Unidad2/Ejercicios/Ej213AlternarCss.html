@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#btnCambiar").click(function(){
+            $("div").css({"background-color":"pink",
+                            "font-size":"x-large",
+                                "border":" solid black"});
+        });
+        //Tamaño de la ventana
+        $(window).resize(function(){
+            $("#divTres").text("ancho = " + $(window).width() +
+                                    "alto = "+$(window).height());
+        });
+    });
+    
+    </script>
+    <style>
+    #divUno{
+        background-color: teal;
+        width: 100px;
+        height: 50px;
+        }
+        #divDos{
+        background-color: green;
+        width: 120px;
+        height: 70px;
+        }
+         #divTres{
+        background-color: fuchsia;
+        width: 140px;
+        height: 90px;
+        }
+        div{
+            border: solid black;
+        }
+        
+        </style>
+</head>
+<body>
+  <div id="divUno">Este es divUno</div> <br>
+  <div id="divDos">Este es divDos</div> <br>
+  <div id="divTres">Este es divTres</div>
+  <button id="btnCambiar">Cambiar fondo</button>
+</body>
+</html>

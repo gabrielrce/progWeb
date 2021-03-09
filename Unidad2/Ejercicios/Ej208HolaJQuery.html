@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("p").click(function(){
+        $(this).hide();
+    });
+        $("#btnMostrar").click(function(){
+            $("p").show(3000);
+        });
+        $("#btnOcultar").click(function(){
+            $("p").hide(3000);
+        });
+    });
+
+    //$(selector).accion(function(){});
+    </script>
+</head>
+<body>
+    <p>Hacer click para ocultar parrafo 1</p>
+    <p>Hacer click para ocultar parrafo 2</p>
+    <p>Hacer click para ocultar parrafo 3</p>
+    <p>Hacer click para ocultar parrafo 4</p>
+    <button id="btnMostrar">Mostrar</button>
+    <button id="btnOcultar">ocultar</button>
+</body>
+</html>

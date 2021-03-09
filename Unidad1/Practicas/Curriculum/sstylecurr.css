@@ -1,0 +1,158 @@
+body{
+	
+	background-color: #9de09d;
+	
+	}
+
+h1{
+	padding-left: 270px;
+	text-align: center;	
+	background-color: #ccd8ff;
+}
+
+.derecha{
+  margin-right: 100px;
+  margin-left: 400px;
+  font-family: helvetica;
+  text-align: center;
+}
+
+.izquierdau{
+	margin-top: 200px;
+ margin-bottom: 40px;
+  margin-right: 1000px;
+  margin-left: 50px;
+  font-family: helvetica;
+  position: absolute;
+}
+
+.izquierdad{
+	margin-top: 330px;
+ margin-bottom: 40px;
+  padding-right: 80px;
+  padding-left: 80px;
+  margin-left: 50px;
+  font-family: helvetica;
+  position: absolute;
+}
+
+.izquierdat{
+	margin-top: 380px;
+ margin-bottom: 40px;
+  margin-right: 1000px;
+  margin-left: 50px;
+  font-family: helvetica;
+  position: absolute;
+
+}
+
+.izquierdac{
+	margin-top: 450px;
+ margin-bottom: 40px;
+  padding-right: 68px;
+  padding-left: 80px;
+  margin-left: 50px;
+  font-family: helvetica;
+  position: absolute;
+}
+
+.izquierdak{
+	margin-top: 500px;
+ margin-bottom: 40px;
+  margin-right: 1000px;
+  margin-left: 50px;
+  font-family: helvetica;
+  position: absolute;
+
+}
+
+.izquierdap{
+	margin-top: 650px;
+ margin-bottom: 40px;
+  padding-right: 40px;
+  padding-left: 65px;
+  margin-left: 50px;
+  font-family: helvetica;
+  position: absolute;
+}
+
+#face{
+	margin-top: 700px;
+ margin-bottom: 40px;
+  margin-right: 1000px;
+  margin-left: 65px;
+  width:55px;
+	 height:55px;
+  position: absolute;
+
+}
+
+#twitter{
+	margin-top: 700px;
+ margin-bottom: 40px;
+  margin-right: 1000px;
+  margin-left: 165px;
+  width:55px;
+	 height:55px;
+  position: absolute;
+
+}
+#insta{
+	margin-top: 700px;
+ margin-bottom: 40px;
+  margin-right: 1000px;
+  margin-left: 265px;
+  width:60px;
+	 height:60px;
+  position: absolute;
+
+}
+
+#foto{
+	 width:230px;
+	 height:230px;
+	 position: absolute;
+	 padding-bottom: 637px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+  	left: 50px;
+  	border: 5px solid #ffcc66;
+  	background-color: #ffcc66;
+  	
+}
+
+h2{
+	border-top: 6px solid black;
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-bottom: 40px;
+  margin-right: 100px;
+  margin-left: 400px;
+  background-color: #dddddd;
+  border: 1px solid black;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+.tabla{
+	background-color: #9298a1;
+	text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+
+

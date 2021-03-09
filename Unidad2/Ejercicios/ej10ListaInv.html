@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var lista = new Array();
+			$("#btnAgregar").click(function(){
+				var nombreInvitado= $("#txtInvitado").val();
+				//alert("invitado:" +nombreInvitado);
+				lista.push(nombreInvitado);
+				var listanum = "<ol>"
+				for (var i = 0; i < lista.length; i++) {
+						listanum=listanum + "<li>"+ lista[i]+ "</li>" ;
+									
+					}
+					listanum=listanum + "</ol>";
+						$("#divLista").html(listanum);	
+			})
+		});
+
+		
+
+	</script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+
+<h1>Lista de Pendejos de Sistemas}</h1>
+<div>
+	<fieldset>
+	Nombre del Invitado:
+	<input type="text" id="txtInvitado" name="txtInvitado" />
+	<button id="btnAgregar">Agregar</button>
+	</fieldset>
+</div>
+
+<div id="divLista"></div>
+</body>
+</html>

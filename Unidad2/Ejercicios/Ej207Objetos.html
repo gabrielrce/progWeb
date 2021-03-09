@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    var estudiante = {matricula:"E15081234", nombre: "Juan Pérez", semestre: 7}
+
+    function mostrarObjeto(){
+        var salida = "";
+        salida += "<br>" + estudiante.matricula + ",";
+        salida += estudiante.nombre + ",";
+        salida += estudiante.semestre + "<br>";
+        document.getElementById("divObjeto").innerHTML = salida;
+    }
+
+    function actualizarObjeto(){
+        estudiante.matricula = document.getElementById("txtMatricula").value;
+        estudiante.nombre = document.getElementById("txtNombre").value;
+        estudiante.semestre = document.getElementById("txtSemestre").value;
+
+    }
+
+    function cargarObjeto(){
+        document.getElementById("txtMatricula").value = estudiante.matricula;
+        document.getElementById("txtNombre").value = estudiante.nombre;
+        document.getElementById("txtSemestre").value = estudiante.semestre;
+
+    }
+</script>
+<body onload="cargarObjeto();">
+    matricula: <input type="text" id="txtMatricula" name="txtMatricula"><br> 
+    nombre: <input type="text" id="txtNombre" name="txtNombre"><br> 
+    semestre: <input type="text" id="txtSemestre" name="txtSemestre"><br> 
+    <input type="button" value="actualizar" onclick="actualizarObjeto();">
+
+    <input type="button" value="mostrar" onclick="mostrarObjeto();">
+    <div id="divObjeto">
+
+    </div>
+   
+</body>
+</html>
